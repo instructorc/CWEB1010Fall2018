@@ -1,0 +1,10 @@
+#foot{
+    background-image: url(../img/dunwoodyfooterlogo.png);
+    background-size: 100%;
+    height: 85px;
+}
+#container{
+    width: 1080px;
+    margin: auto;
+    
+}
