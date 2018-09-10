@@ -1,0 +1,9 @@
+#footer{
+    background-image: url(../img/dunwoodyfooterlogo.png);
+    height: 85px;
+    background-size: 100%;
+}
+#container{
+    width: 1080px;
+    margin: auto;
+}
