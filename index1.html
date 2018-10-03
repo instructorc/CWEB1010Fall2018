@@ -10,19 +10,59 @@
 
         <!--Internal CSS Style Method-->
         <style>
-        
+        html, body, div, span, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        abbr, address, cite, code,
+        del, dfn, em, img, ins, kbd, q, samp,
+        small, strong, sub, sup, var,
+        b, i,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, figcaption, figure, 
+        footer, header, hgroup, menu, nav, section, summary,
+        time, mark, audio, video {
+            margin:0;
+            padding:0;
+            border:0;
+            outline:0;
+            font-size:100%;
+            vertical-align:baseline;
+            background:transparent;
+        }
+
+        #headstruct{
+            width: 100%;
+            height: 75px;
+            border: 3px solid blue;
+        }
+        #banner{
+            width: 100%;
+            height: 700px;
+            border: 3px solid red;
+            background-image: url(img/banner.jpg);
+            background-size: 100%;
+            background-position: center;
+        }
+        .block_contain{
+            width: 90%;
+            margin: auto;
+        }
         
         </style>
     </head>
     <body>
-        <header>
-            <div id="logo"><img src="https://via.placeholder.com/75x100" alt=""></div>
-            <nav>
+        <header id="headstruct">
+            <div class="block_contain">
+                <div id="logo"><img src="https://via.placeholder.com/150x75" alt="logo"></div>
+                <nav>
 
-            </nav>
+                </nav>
+            </div><!--closing div tag for block contain-->
         </header>
         <div id="banner">
-            
+            <div class="block_contain">
+
+            </div>
         </div>
 
         <footer>
