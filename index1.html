@@ -43,23 +43,26 @@
                 background-position: center;
             }
             .block_contain{
+                display: flex;
                 width: 95%;
                 border: 2px solid #333;
                 margin:auto;
             }
             #logo{
                 border: 2px solid red;
-                width: 100px;
                 height: 50px;
+                flex: 0 0 100px;
             }
             #navstruct{
-                width: 500px;
+               
                 height: 50px;
                 border: 2px solid purple;
+                flex: 3 0 500px;
             }
             #user_info{
-                width: 300px;
+              
                 height: 50px;
+                flex: 0 0 300px;
                 border: 2px solid orangered;
             }
         </style>
@@ -78,7 +81,8 @@
                     </ul>
                 </nav><!--flex item 2-->
                 <div id="user_info">
-
+                        <img src="https://via.placeholder.com/75x50" alt="notification bell">
+                        <img src="https://via.placeholder.com/75x50" alt="profile icon">
                 </div><!--flex item 3-->
             </div><!--end of div block_contain-->
         </header>
