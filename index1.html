@@ -28,9 +28,26 @@
                 vertical-align:baseline;
                 background:transparent;
             }
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            a{
+                text-decoration: none;
+            }
+            a:link{
+                color: black;
+            }
+            a:visited{
+                color: black;
+            }
+            a:hover{
+                border-bottom: 3px solid black;
+                padding-bottom: 8px;
+
+            }
             #headstruct{
                 width: 100%;
-                height: 75px;
+                height: 70px;
                 border: 3px solid blue;
             }
             #banner{
@@ -42,8 +59,17 @@
                 background-position: center;
             }
             .block_contain{
-                width: 90%;
+                width: 95%;
                 margin: auto;
+                margin-top: 4px;
+                display: flex;
+                border: 4px solid black;
+            }
+            .banner_contain{
+                width: 95%;
+                margin: auto;
+                margin-top: 2%;
+                margin-bottom: 2%;
                 display: flex;
                 border: 4px solid black;
             }
@@ -64,9 +90,17 @@
             }
             #listruct{
                 display: flex;
+                list-style-type: none;
+                text-transform: uppercase;
             }
             li{
                 flex: 0 0 120px;
+                text-align: center;
+            }
+            .banner_box{
+                border: 2px solid aqua;
+                flex: 1 0 500px;
+                height: 700px;
             }
 
         
@@ -80,9 +114,9 @@
                     <ul id="listruct">
                         <li><a href="about.html">About</a></li>
                         <li><a href="process.html">Process</a></li>
-                        <li><a href="apartments.html">Apartments</a></li>
-                        <li><a href="prop_agents.html">Property Agents</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#apartments">Apartments</a></li>
+                        <li><a href="prop_agents.html">Agents</a></li>
+                        <li><a href="contact.html">Contact </a></li>
                     </ul>
 
                 </nav><!--flex item 2-->
@@ -93,9 +127,10 @@
             </div>
         </header>
         <div id="banner">
-            <div class="block_contain">
-                
-            </div><!--end of block contain-->
+            <div class="banner_contain"><!--Flex container-->
+                <div class="banner_box"></div><!--Flex item one-->
+                <div class="banner_box"></div><!--Flex item two-->
+            </div><!--end of banner contain-->
         </div><!--end of div banner-->
 
         
