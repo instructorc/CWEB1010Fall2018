@@ -104,6 +104,54 @@
                 flex: 0 0 135px;
                 text-align: center;
             }
+            .banner_box #profile_signup{
+                color: white;
+                text-align: center;
+                width: 70%;
+                min-width: 60%;
+                height: 85%;
+                margin-left: auto;
+                padding: 2% 2% 5% 2%;
+                background-color: rgba(0, 0, 0, .7);
+            }
+            /**Form style rules**/
+            form{
+                display: flex;
+                flex-wrap: wrap;
+                border: 2px solid orangered;
+                width: 70%;
+                height: 75%;
+                margin: auto;
+                margin-top: 2.5em;
+                text-align: left;
+                font-size: 1.3em;
+
+            }
+
+            form > input, select, button {
+                flex: 1 0 60%;
+                height: 45px;
+                border: 2px solid red;
+            }
+            form > label {
+                flex: 1 0 130px;
+                height: 45px;
+                border: 2px solid red;
+            }
+            form > input, select {
+                font-size: 1.1em;
+                background-color:transparent;
+                color: white;
+                border: none;
+                border-bottom: 2px solid white;
+            }
+            form > button {
+                background-color:#0098B6;
+                font-size: 1.4em;
+                color: white;
+                height: auto;
+                text-transform: uppercase;
+            }
 
             
         
@@ -131,10 +179,37 @@
         <div id="banner">
             <div id="banner_contain"><!--Container for items below-->
                 <div class="banner_box"></div><!--Flex item 1-->
-                <div class="banner_box"></div><!--Flex item 2-->
+                <div class="banner_box">
+                    <section id="profile_signup">
+                        <h2>Minneapolis Upscale Luxury Apartment Guide</h2>
+                        <p>The only site where apartments provide you with thier best offer based on your preferences</p>
+                        <form>
+                            
+                            <label>First Name: </label> <input type="text" maxlength="30"  name="fname">
+                            <label>Last Name: </label> <input type="text" maxlength="30"  name="lname">
+                            <label>Email: </label> <input type="text" maxlength="30" >
+                            <label>Preferred Move-in Month:</label> <input type="month" name="move_in">
+                            <label>Preferred Rent Range:</label>
+                            <select name="rent_range">
+                                <option value="1">$650 - $999</option>
+                                <option value="2">$1000 - $1399</option>
+                                <option value="3">$1400 - $1599</option>
+                                <option value="4">$1600 - $1999</option>
+                                <option value="5">$2000 - $2499</option>
+                                <option value="6">$2500 - $2999</option>
+                                <option value="7">$3000 - $3499</option>
+                                <option value="8">$3500 - $3999</option>
+                                <option value="9">$4000 - $4999</option>
+                                <option value="10">$5000+</option>
+                            </select> 
+                            <button type="button" onclick="alert('Hello World!')">Create Free Profile</button>
+                        </form>
+                    </section>                    
+                </div><!--Flex item 2-->
             </div><!--End of div block contain-->
         </div>
-        
+        <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1224 220"><defs><style>.cls-1{fill:#111;}.cls-2{font-size:26px;fill:#fff;font-family:Montserrat-Regular, Montserrat;}.cls-3{letter-spacing:0em;}.cls-4{letter-spacing:-0.01em;}.cls-5{letter-spacing:0em;}.cls-6{letter-spacing:0.01em;}.cls-7{letter-spacing:0em;}.cls-8{letter-spacing:0em;}.cls-9{letter-spacing:-0.02em;}.cls-10{letter-spacing:-0.02em;}.cls-11{letter-spacing:-0.01em;}</style></defs><title>Artboard 1</title><polygon class="cls-1" points="0 126 687 126 642 208 0 208 0 126"/><polygon class="cls-1" points="730 126 683 208 714 208 761 126 730 126"/><polygon class="cls-1" points="764 126 717 208 788 208 841 126 764 126"/><polygon class="cls-1" points="844 126 790.5 208 817 208 868 126 844 126"/><text class="cls-2" transform="translate(47 173)">W<tspan class="cls-3" x="28.89" y="0">h</tspan><tspan x="46.54" y="0">e</tspan><tspan class="cls-4" x="62.24" y="0">r</tspan><tspan x="72.33" y="0">e a</tspan><tspan class="cls-5" x="110.19" y="0">p</tspan><tspan x="127.74" y="0">a</tspan><tspan class="cls-6" x="143.08" y="0">r</tspan><tspan x="153.89" y="0">t</tspan><tspan class="cls-7" x="164.45" y="0">m</tspan><tspan class="cls-8" x="192.09" y="0">ents ma</tspan><tspan class="cls-9" x="298.4" y="0">k</tspan><tspan class="cls-8" x="313.48" y="0">e </tspan><tspan class="cls-10" x="335.99" y="0">y</tspan><tspan class="cls-8" x="349.7" y="0">ou an of</tspan><tspan class="cls-11" x="455.18" y="0">f</tspan><tspan x="463.76" y="0">er</tspan></text></svg>				
+        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="-370 0 1224 82"><defs><style>.cls-1{fill:#111;}.cls-2{font-size:26px;fill:#fff;font-family:Montserrat-Regular, Montserrat;}.cls-3{letter-spacing:0em;}.cls-4{letter-spacing:0.02em;}.cls-5{letter-spacing:0em;}.cls-6{letter-spacing:0em;}.cls-7{letter-spacing:0em;}.cls-8{letter-spacing:-0.02em;}.cls-9{letter-spacing:-0.01em;}</style></defs><title>bottom_graphic</title><polygon class="cls-1" points="868 82 181 82 226 0 868 0 868 82"/><polygon class="cls-1" points="138 82 185 0 154 0 107 82 138 82"/><polygon class="cls-1" points="104 82 151 0 80 0 27 82 104 82"/><polygon class="cls-1" points="24 82 77.5 0 51 0 0 82 24 82"/><text class="cls-2" transform="translate(331.11 49.29)">A<tspan class="cls-3" x="18.64" y="0">p</tspan><tspan x="36.19" y="0">a</tspan><tspan class="cls-4" x="51.53" y="0">r</tspan><tspan x="62.35" y="0">t</tspan><tspan class="cls-5" x="72.9" y="0">m</tspan><tspan x="100.54" y="0">ents in t</tspan><tspan class="cls-5" x="205.89" y="0">h</tspan><tspan class="cls-6" x="223.54" y="0">e </tspan><tspan class="cls-7" x="246.06" y="0">h</tspan><tspan class="cls-8" x="263.71" y="0">e</tspan><tspan x="279.03" y="0">a</tspan><tspan class="cls-4" x="294.37" y="0">r</tspan><tspan x="305.18" y="0">t of t</tspan><tspan class="cls-7" x="365.03" y="0">h</tspan><tspan x="382.69" y="0">e ci</tspan><tspan class="cls-9" x="426.83" y="0">t</tspan><tspan x="437.13" y="0">y</tspan></text></svg>        
 
 
 
