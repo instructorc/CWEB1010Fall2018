@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Midterm Question #37</title>
+
+        <!--Internal CSS Style Method-->
+        <style>
+            #container{
+                width: 1200px;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+                grid-template-areas: "head head head head"
+                                     "side main main main"
+                                     "side main main main"
+                                     "foot foot foot foot";
+                margin: auto;
+            }
+            #headstruct{
+                grid-area: head;
+                height: 250px;
+                border: 2px solid green;
+            }
+
+            #side{
+                grid-area: side;
+                
+                border: 2px solid yellow;
+                
+            }
+            #main{
+                grid-area: main;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(1, 1fr);
+                grid-template-areas: "box_one box_two";
+                height: 100vh;
+                border: 2px solid red;
+                
+
+            }
+            #box1{
+                grid-area: box_one;
+                border: 2px solid green;
+            }
+            #box2{
+                grid-area: box_two;
+                border: 2px solid orangered;
+            }
+            #foot{
+                grid-area: foot;
+                height: 250px;
+                border: 2px solid blue;
+                
+            }
+        
+        </style>
+    </head>
+    <body>
+        <div id="container"><!--Grid container-->
+            <header id="headstruct"></header>           
+            <aside id="side"></aside>
+            <main id="main">
+                <div id="box1"></div>
+                <div id="box2"></div>
+
+            </main>      
+            <footer id="foot"></footer>
+        </div><!--End of div container-->
+    </body>
+</html>
