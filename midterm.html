@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Midterm Question 37</title>
+
+        <!--Internal CSS Style Method-->
+        <style> 
+            #container{
+                width: 1200px;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+                grid-template-areas: "head head head head"
+                                     "side main main main"
+                                     "side main main main"
+                                     "foot foot foot foot";
+                margin: auto;
+            }
+            #headstruct{
+                grid-area: head;
+                width: 100%;
+                border: 2px solid green;
+            }
+
+            #side{
+                grid-area: side;
+                border: 2px solid yellow;
+                
+            }
+            #main{
+                grid-area: main;                
+                border: 2px solid red;
+                
+
+            }
+            #foot{
+                grid-area: foot;               
+                height: 250px;
+                border: 2px solid blue;
+               
+            }
+
+        
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <header id="headstruct"></header>         
+            <aside id="side"></aside>
+            <main id="main"></main>          
+            <footer id="foot"></footer>
+
+        </div>
+    </body>
+</html>
