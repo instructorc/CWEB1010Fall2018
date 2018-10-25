@@ -14,7 +14,7 @@
                                      "side main main main"
                                      "side main main main"
                                      "foot foot foot foot";
-                width: 1200px;
+                width: 100vw;
                 margin: auto;
             }
             #headstruct{
@@ -37,13 +37,24 @@
                 height: 250px;
                 border: 2px solid blue;
             }
+            #headstruct img{
+                margin: auto;
+                width: 200px;
+            }
+            @media screen and  (max-width: 768px){
+                #headstruct{
+                    display: none;
+                }
+            }
         
         </style>
     </head>
     <body>
         <!--Implementing container to make site fixed-->
         <div id="container">
-            <header id="headstruct"></header>
+            <header id="headstruct">
+                <img src="https://dehayf5mhw1h7.cloudfront.net/wp-content/uploads/sites/183/2017/10/23095453/hanging-pumpkins-for-halloween_1085-543-200x200.jpg">
+            </header>
             
             <aside id="side"></aside>
             <main id="main"></main>
