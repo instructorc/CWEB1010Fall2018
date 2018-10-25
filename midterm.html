@@ -6,7 +6,7 @@
         <!--Internal CSS Style Method-->
         <style> 
             #container{
-                width: 1200px;
+                width: 100vw;
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
                 grid-template-rows: repeat(4, 1fr);
@@ -38,6 +38,11 @@
                 height: 250px;
                 border: 2px solid blue;
                
+            }
+            @media screen and  (max-width: 768px){
+                #headstruct{
+                display: none;
+            }
             }
 
         
