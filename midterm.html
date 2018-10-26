@@ -6,7 +6,7 @@
         <!--Internal CSS Style Method-->
         <style>
             #container{
-                width: 1200px;
+                width: 100%;
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
                 grid-template-rows: repeat(4, 1fr);
@@ -53,6 +53,25 @@
                 border: 2px solid blue;
                 
             }
+
+            /* smaller than 1024 pixels */
+            @media screen and (max-width: 1024px) {
+                #headstruct{
+                    background-color: #cd0000;
+                }
+            }
+            /* smaller than 768 pixels */
+            @media screen and (max-width: 768px) {
+                #headstruct{
+                    background-color: #eeff22;
+                }
+            }
+            /* smaller than 480 pixels */
+            @media screen and (max-width: 480px) {
+                #headstruct{
+                    background-color: #4400ff;
+                }
+            }
         
         </style>
     </head>
@@ -61,8 +80,6 @@
             <header id="headstruct"></header>           
             <aside id="side"></aside>
             <main id="main">
-                <div id="box1"></div>
-                <div id="box2"></div>
 
             </main>      
             <footer id="foot"></footer>
