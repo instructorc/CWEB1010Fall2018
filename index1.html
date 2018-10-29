@@ -92,16 +92,26 @@
             #user_info{
                 border: 2px solid green;
                 height: 50px;
-                flex: 0 0 300px;
+                flex: 0 0 200px;
             }
             #listruct{
                 display: flex;
                 list-style-type: none;
                 text-transform: uppercase;
             }
+            /**style rules for mobile navigation**/
+            #navstruct_mobile{
+                display: none;
+            }
+            #user_info_mobile{
+                display: none;
+            }
+            #listruct_mobile{
+                display: none;
+            }
             #listruct li{
               
-                flex: 0 0 135px;
+                flex: 0 0 120px;
                 text-align: center;
             }
             .banner_box #profile_signup{
@@ -202,6 +212,21 @@
                 background-size: cover;
             }
 
+            @media screen and (max-width: 1024px){
+                    #navstruct{
+                        display: none;
+                    }
+                    #user_info{
+                        display:none;
+                    }
+                    #navstruct_mobile{
+                        display: block;
+
+                    }
+             
+
+            }
+
             
         
         </style>
@@ -223,6 +248,21 @@
                     <img src="https://via.placeholder.com/75x20" alt="logo">
                     <img src="https://via.placeholder.com/75x20" alt="logo">
                 </div> <!--flex item 3-->
+                <!--Navigation for mobile-->
+                <nav id="navstruct_mobile"> &#9776;
+                        <div id="user_info_mobile">
+                            <img src="https://via.placeholder.com/75x20" alt="logo">
+                            <img src="https://via.placeholder.com/75x20" alt="logo">
+                        </div> <!--flex item 3-->
+                        <ul id="listruct_mobile">
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="process.html">Process</a></li>
+                            <li><a href="#apartment">Apartments</a></li>
+                            <li><a href="agents.html">Agents</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </nav><!-- flex item 2-->
+
             </div><!--End of div block contain-->
         </header>
         <div id="banner">
