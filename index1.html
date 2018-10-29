@@ -32,6 +32,10 @@
         body{
             font-family:Arial, Helvetica, sans-serif;
         }
+        h2{
+            font-size: 1.7em;
+            margin: .3em;
+        }
 
         #headstruct{
             width: 100%;
@@ -72,6 +76,11 @@
             height: 50px;   
             flex: 3 0 500px;
         }
+        #navstruct_mobile{
+            display: none;
+            background-image: url(http://www.stickpng.com/assets/images/588a64e7d06f6719692a2d11.png);
+            
+        }
         #user_icons{
             height: 50px;
             border: 2px solid blue;
@@ -81,7 +90,7 @@
             display: flex;
         }
         li{
-            flex: 0 0 160px;
+            flex: 0 0 140px;
         }
         #user_icons img{
             margin: 0px 10px;
@@ -217,6 +226,35 @@
             background-size: cover;
         }
 
+        @media screen and (max-width: 1024px) {
+
+     
+            #navstruct_mobile{
+                display: block;
+                background-image: url(http://www.stickpng.com/assets/images/588a64e7d06f6719692a2d11.png);
+                background-size: 29%;
+                height: 69px;
+                width: 20%;
+                background-repeat: no-repeat;
+                
+            }
+            #navstruct{
+            display: none;
+            }
+            #user_icons{
+                display: none;
+            }
+            #user_icons_mobile{
+                display: none;
+            }
+            #listruct_mobile{
+                display: none;
+                
+            }
+            
+
+        }
+
 
         
         </style>
@@ -227,6 +265,19 @@
                 <div id="logo"><img src="https://via.placeholder.com/100x50" alt="logo"></div><!--flex item 1-->
                 <nav id="navstruct">
                     <ul id="listruct">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="process.html">Process</a></li>
+                        <li><a href="#apartments">Apartments</a></li>
+                        <li><a href="prop_agents.html">Agents</a></li>
+                        <li><a href="contact.html">Contact </a></li>
+                    </ul>
+                </nav><!--flex item 2-->
+                <nav id="navstruct_mobile">
+                    <div id="user_icons_mobile">
+                        <img src="https://via.placeholder.com/50x50" alt="notifications Symbol">
+                        <img src="https://via.placeholder.com/50x50" alt="user Symbol">
+                    </div><!--flex item 3-->
+                    <ul id="listruct_mobile">
                         <li><a href="about.html">About</a></li>
                         <li><a href="process.html">Process</a></li>
                         <li><a href="#apartments">Apartments</a></li>
