@@ -89,17 +89,29 @@
             #user_info{
               
                 height: 50px;
-                flex: 0 0 300px;
+                flex: 0 0 200px;
                 border: 2px solid orangered;
             }
             #listruct{
                 display: flex;
                 list-style-type: none;
             }
-
+            /**mobile navigation**/
+            #navstruct_mobile{
+               
+               display: none;
+           }
+           #user_info_mobile{
+             
+               display: none;
+           }
+           #listruct_mobile{
+               display: none;
+           }
+        /**End of mobile navigation style rules**/
             #listruct li{
                 text-transform: uppercase;
-                flex: 0 0 130px;
+                flex: 0 0 110px;
                 text-align: center;
             }
             #user_info img{
@@ -208,6 +220,28 @@
                 background-image: url(img/luxury.jpg);
                 background-size: cover;
             }
+            /** Media  Query for 1024 break-point**/
+            @media screen and (max-width: 1024px){
+
+                #navstruct{
+               
+                    display: none;
+                    font-size: 2em;
+                }
+                #listruct{
+                    display: none;
+                }
+                #user_info{
+                    display: none;
+                }
+
+                #navstruct_mobile{
+                    display: block;
+                }
+
+
+
+            }
         </style>
     </head>
     <body>
@@ -227,6 +261,21 @@
                         <img src="https://via.placeholder.com/75x50" alt="notification bell">
                         <img src="https://via.placeholder.com/75x50" alt="profile icon">
                 </div><!--flex item 3-->
+                <!--HTML for mobile view below-->
+                <nav id="navstruct_mobile"> &#9776;
+                        <ul id="listruct_mobile">
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="process.html">Process</a></li>
+                            <li><a href="#apartments">Apartments</a></li>
+                            <li><a href="prop_agents.html">Agents</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <div id="user_info_mobile">
+                            <img src="https://via.placeholder.com/75x50" alt="notification bell">
+                            <img src="https://via.placeholder.com/75x50" alt="profile icon">
+                    </div>
+                    <!--ENDING HTML for mobile view-->
             </div><!--end of div block_contain-->
         </header>
         <div id="banner">
