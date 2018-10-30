@@ -7,7 +7,7 @@
         <meta name="keywords" content="Luxury Apartments, Downtown Living, Downtown Minneapolis Apartments">
         <meta name="author" content="C.Fulton">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <script src="js/code.js"></script>
         <!--Internal CSS Style Method-->
         <style>
             html, body, div, span, object, iframe,
@@ -105,12 +105,21 @@
             /** Mobile Navigation Style rules**/
             #navstruct_mobile{
                display: none;
+               flex: 3 0 500px;
            }
            #user_info_mobile{
               display: none;
+              height: 50px;
+              flex: 0 0 300px;
+              
            }
            #listruct_mobile{
-               display: none;
+                display: none;
+           }
+           #hamburger_icon{
+            text-align: end;
+            font-size: 2em;
+            float: right;
            }
 
             #listruct li{
@@ -253,12 +262,44 @@
                 #user_info{
                     display: none;
                 }
-                #listruct{
-                    display: none;
-                }
+                
                 #navstruct_mobile{
                     display: block;
-                    text-align: end;
+                    
+                }
+                #headstruct{
+                    position: sticky;
+                    background-color: white;
+                    
+                    top: 0;
+                }
+                #listruct_mobile{
+                    display: none;
+                    color: white;
+                    position: fixed;
+                    height: 100%;
+                    width: 100vw;
+                    bottom: 0;
+                    left: 0;
+                    background: rgba(0, 152, 182, 0.623);
+                    top: 50px;
+                    transition: opacity 1s;
+                    overflow: auto;
+                    
+                }
+                #listruct_mobile a:visited, a:link{
+                    
+                    color: white
+                }
+                #listruct_mobile li{
+
+                    width: 200px;
+                    margin: auto;
+                    padding: 1em;
+                    list-style-type: none;
+                    font-size: 2em;
+                    font-weight: bolder;
+
                 }
                 
             }
@@ -286,12 +327,12 @@
                         <img src="https://via.placeholder.com/75x50" alt="profile icon">
                 </div><!--flex item 3-->
                 <!--Mobile Navigation-->
-                <nav id="navstruct_mobile"> &#9776;
-                    <div id="user_info_mobile">
+                <nav id="navstruct_mobile"><span id="hamburger_icon"> &#9776;</span>
+                    <div id="user_info_mobile" style="display: none;">
                             <img src="https://via.placeholder.com/75x50" alt="notification bell">
                             <img src="https://via.placeholder.com/75x50" alt="profile icon">
                     </div>
-                    <ul id="listruct_mobile">
+                    <ul id="listruct_mobile" style="display: none;">
                         <li><a href="about.html">About</a></li>
                         <li><a href="process.html">Process</a></li>
                         <li><a href="#apartments">Apartments</a></li>
@@ -362,6 +403,19 @@
 
             
         </footer>
+        <script>
+            document.getElementById("hamburger_icon").addEventListener('click', function(){
+                
 
+                if(document.getElementById('listruct_mobile').style.display === "none"){
+                document.getElementById('listruct_mobile').style.display= "block";
+                document.getElementById('user_info_mobile').style.display= "block";
+                }else{
+                    document.getElementById('listruct_mobile').style.display= "none";
+                    document.getElementById('user_info_mobile').style.display= "none";
+                }
+                
+            });
+        </script>
     </body>
 </html>
