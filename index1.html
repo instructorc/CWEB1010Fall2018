@@ -272,7 +272,7 @@
                         <li><a href="contact.html">Contact </a></li>
                     </ul>
                 </nav><!--flex item 2-->
-                <nav id="navstruct_mobile">
+                <nav id="navstruct_mobile"><span id="hamburger_icon"> &#9776;</span>
                     <div id="user_icons_mobile">
                         <img src="https://via.placeholder.com/50x50" alt="notifications Symbol">
                         <img src="https://via.placeholder.com/50x50" alt="user Symbol">
@@ -350,5 +350,19 @@
 
 
         </footer>
+        <script>
+            document.getElementById("hamburger_icon").addEventListener('click', function(){
+                
+
+                if(document.getElementById('listruct_mobile').style.display === "none"){
+                document.getElementById('listruct_mobile').style.display= "block";
+                document.getElementById('user_info_mobile').style.display= "block";
+                }else{
+                    document.getElementById('listruct_mobile').style.display= "none";
+                    document.getElementById('user_info_mobile').style.display= "none";
+                }
+                
+            });
+        </script>
     </body>
 </html>
