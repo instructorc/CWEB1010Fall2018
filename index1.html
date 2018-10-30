@@ -99,16 +99,25 @@
                 list-style-type: none;
                 text-transform: uppercase;
             }
+            #hamburger_icon{
+            text-align: end;
+            font-size: 2em;
+            float: right;
+           }
             /**style rules for mobile navigation**/
             #navstruct_mobile{
+               display: none;
+               flex: 3 0 500px;
+           }
+           #user_info_mobile{
+              display: none;
+              height: 50px;
+              flex: 0 0 300px;
+              
+           }
+           #listruct_mobile{
                 display: none;
-            }
-            #user_info_mobile{
-                display: none;
-            }
-            #listruct_mobile{
-                display: none;
-            }
+           }
             #listruct li{
               
                 flex: 0 0 120px;
@@ -213,16 +222,52 @@
             }
 
             @media screen and (max-width: 1024px){
-                    #navstruct{
-                        display: none;
-                    }
-                    #user_info{
-                        display:none;
-                    }
-                    #navstruct_mobile{
-                        display: block;
+                /**Hide default navigation**/
+                #navstruct{
+                   display: none;
+                }
+                #user_info{
+                    display: none;
+                }
+                
+                #navstruct_mobile{
+                    display: block;
+                    
+                }
+                #headstruct{
+                    position: sticky;
+                    background-color: white;
+                    
+                    top: 0;
+                }
+                #listruct_mobile{
+                    display: none;
+                    color: white;
+                    position: fixed;
+                    height: 100%;
+                    width: 100vw;
+                    bottom: 0;
+                    left: 0;
+                    background: rgba(0, 152, 182, 0.623);
+                    top: 60px;
+                    transition: opacity 1s;
+                    overflow: auto;
+                    
+                }
+                #listruct_mobile a:visited, a:link{
+                    
+                    color: white
+                }
+                #listruct_mobile li{
 
-                    }
+                    width: 200px;
+                    margin: auto;
+                    padding: .5em;
+                    list-style-type: none;
+                    font-size: 2em;
+                    font-weight: bolder;
+
+                }
              
 
             }
@@ -249,7 +294,7 @@
                     <img src="https://via.placeholder.com/75x20" alt="logo">
                 </div> <!--flex item 3-->
                 <!--Navigation for mobile-->
-                <nav id="navstruct_mobile"> &#9776;
+                <nav id="navstruct_mobile"><span id="hamburger_icon"> &#9776;</span>
                         <div id="user_info_mobile">
                             <img src="https://via.placeholder.com/75x20" alt="logo">
                             <img src="https://via.placeholder.com/75x20" alt="logo">
@@ -322,6 +367,19 @@
 
             
         </footer>
+        <script>
+            document.getElementById("hamburger_icon").addEventListener('click', function(){
+                
 
+                if(document.getElementById('listruct_mobile').style.display === "none"){
+                document.getElementById('listruct_mobile').style.display= "block";
+                document.getElementById('user_info_mobile').style.display= "block";
+                }else{
+                    document.getElementById('listruct_mobile').style.display= "none";
+                    document.getElementById('user_info_mobile').style.display= "none";
+                }
+                
+            });
+        </script>
     </body>
 </html>
