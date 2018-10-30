@@ -98,15 +98,22 @@
             }
             /**mobile navigation**/
             #navstruct_mobile{
-               
                display: none;
+               flex: 3 0 500px;
            }
            #user_info_mobile{
-             
-               display: none;
+              display: none;
+              height: 50px;
+              flex: 0 0 300px;
+              
            }
            #listruct_mobile{
-               display: none;
+                display: none;
+           }
+           #hamburger_icon{
+            text-align: end;
+            font-size: 2em;
+            float: right;
            }
         /**End of mobile navigation style rules**/
             #listruct li{
@@ -175,6 +182,7 @@
                 display: grid;
                 width: 100vw;
                 height: 100vh;
+                grid-row-gap: 70px;
                 grid-template-columns: repeat(3, 1fr);
                 grid-template-rows: repeat(3, 1fr);
                 grid-template-areas: "tb_graphic_one tb_graphic_one tb_graphic_one"
@@ -204,7 +212,8 @@
 
             .grid_box{
                 border: 2px solid orangered;
-                width: 90%;
+                width: 70%;
+               min-width: 275px;
                 margin: auto;
                 height: 300px;
             }
@@ -223,20 +232,51 @@
             /** Media  Query for 1024 break-point**/
             @media screen and (max-width: 1024px){
 
+                /**Hide default navigation**/
                 #navstruct{
-               
-                    display: none;
-                    font-size: 2em;
-                }
-                #listruct{
-                    display: none;
+                   display: none;
                 }
                 #user_info{
                     display: none;
                 }
-
+                
                 #navstruct_mobile{
                     display: block;
+                    
+                }
+                #headstruct{
+                    position: sticky;
+                    background-color: white;
+                    
+                    top: 0;
+                }
+                #listruct_mobile{
+                    display: none;
+                    color: white;
+                    position: fixed;
+                    height: 100%;
+                    width: 100vw;
+                    bottom: 0;
+                    left: 0;
+                    background: rgba(0, 152, 182, 0.623);
+                    top: 65px;
+                    transition: opacity 1s;
+                    overflow: auto;
+                    
+                }
+                #listruct_mobile a:visited, a:link{
+                    
+                    color: white
+                }
+                #listruct_mobile li{
+
+                    width: 200px;
+                    margin: auto;
+                    padding: .5em;
+                    list-style-type: none;
+                    font-size: 2em;
+                    font-weight: bolder;
+
                 }
 
 
@@ -262,19 +302,20 @@
                         <img src="https://via.placeholder.com/75x50" alt="profile icon">
                 </div><!--flex item 3-->
                 <!--HTML for mobile view below-->
-                <nav id="navstruct_mobile"> &#9776;
-                        <ul id="listruct_mobile">
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="process.html">Process</a></li>
-                            <li><a href="#apartments">Apartments</a></li>
-                            <li><a href="prop_agents.html">Agents</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                    </nav>
+                <nav id="navstruct_mobile"><span id="hamburger_icon"> &#9776;</span>
                     <div id="user_info_mobile">
-                            <img src="https://via.placeholder.com/75x50" alt="notification bell">
-                            <img src="https://via.placeholder.com/75x50" alt="profile icon">
+                        <img src="https://via.placeholder.com/75x50" alt="notification bell">
+                        <img src="https://via.placeholder.com/75x50" alt="profile icon">
                     </div>
+                    <ul id="listruct_mobile">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="process.html">Process</a></li>
+                        <li><a href="#apartments">Apartments</a></li>
+                        <li><a href="prop_agents.html">Agents</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+
                     <!--ENDING HTML for mobile view-->
             </div><!--end of div block_contain-->
         </header>
@@ -334,5 +375,19 @@
         <footer>
 
         </footer>
+        <script>
+            document.getElementById("hamburger_icon").addEventListener('click', function(){
+                
+
+                if(document.getElementById('listruct_mobile').style.display === "none"){
+                document.getElementById('listruct_mobile').style.display= "block";
+                document.getElementById('user_info_mobile').style.display= "block";
+                }else{
+                    document.getElementById('listruct_mobile').style.display= "none";
+                    document.getElementById('user_info_mobile').style.display= "none";
+                }
+                
+            });
+        </script>
     </body>
 </html>
