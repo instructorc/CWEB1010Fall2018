@@ -42,24 +42,27 @@
                 color: black;
             }
             a:hover{
-                border-bottom: 3px solid black;
+                border-bottom: 1px solid black;
                 padding-bottom: 10px;
             }
             h2{
                 
-                font-size: 1.4vw;
+                font-size: 1.4em;
                 font-weight: 300;
                 
+            }
+            h3{
+                font-size: 2.5em;
+                font-weight: 300;
+                line-height: 262px;
             }
             #headstruct{
                 width: 100%;
                 height: 60px;
-                border: 3px solid blue;
+               
             }
             #banner{
                 width: 100%;
-                
-                border: 3px solid red;
                 background-image: url(img/banner.jpg);
                 background-size: cover;
                 background-position: center;
@@ -67,7 +70,6 @@
             .block_contain{
                 display: flex;
                 width: 95%;
-                border: 2px solid #333;
                 margin:auto;
                 margin-top: 10px;
             }
@@ -75,28 +77,25 @@
             #banner_contain{
                 display: flex;
                 width: 95%;
-                border: 2px solid #333;
                 margin:auto;
                 margin-top: 10px;
                 padding-top: 2%;
                 padding-bottom: 2%;
             }
             #logo{
-                border: 2px solid red;
+               
                 height: 50px;
                 flex: 0 0 100px;
             }
             #navstruct{
-               
                 height: 50px;
-                border: 2px solid purple;
                 flex: 3 0 500px;
             }
             #user_info{
               
                 height: 50px;
-                flex: 0 0 300px;
-                border: 2px solid orangered;
+                flex: 0 0 250px;
+                
             }
             #listruct{
                 display: flex;
@@ -130,13 +129,17 @@
             #user_info img{
                 margin: 0px 10px;
             }
+
+            #user_info_mobile img{
+                margin: 0px 10px;
+            }
             .banner_box{
-                flex: 1 0 500px;
+                flex: 1 0 375px;
                 height: 700px;
-                border: 2px solid aqua;
+                
             }
             .banner_box p {
-                font-size: 1.4em;
+                font-size: .9em;
                 margin-top: 16px;
                 padding: 0px 50px;
             }
@@ -148,7 +151,7 @@
             .banner_box #profile_signup{
                 color: white;
                 text-align: center;
-                width: 70%;
+                width: 555px;
                 min-width: 60%;
                 height: 85%;
                 margin-left: auto;
@@ -159,25 +162,25 @@
             form{
                 display: flex;
                 flex-wrap: wrap;
-                border: 2px solid orangered;
+                
                 width: 70%;
                 height: 75%;
                 margin: auto;
                 margin-top: 2.5em;
                 text-align: left;
-                font-size: 1.3em;
+                font-size: 1em;
 
             }
 
             form > input, select, button {
                 flex: 1 0 60%;
-                height: 45px;
-                border: 2px solid red;
+                height: 25px;
+                
             }
             form > label {
                 flex: 1 0 130px;
-                height: 45px;
-                border: 2px solid red;
+                height: 25px;
+                
             }
             form > input, select {
                 font-size: 1.1em;
@@ -192,17 +195,18 @@
                 color: white;
                 height: auto;
                 text-transform: uppercase;
+                border: none;
             }
             /**Implementing CSS Grid**/
             #grid_container{
                 display: grid;
-                width: 100vw;
-                height: 100vh;
+                width: 100%;
+                height: 100%;
                 grid-template-areas: "graphic_one graphic_one graphic_one"
                                     "upscale luxury elegant"
                                     "graphic_two graphic_two graphic_two";
                 grid-column-gap: 20px;
-                grid-row-gap: 20px;
+                grid-row-gap: 80px;
                 grid-template-columns: repeat(3, 1fr);
                 grid-template-rows: repeat(3, 1fr);
 
@@ -213,45 +217,93 @@
 
             #tb_graphic_one{
                 grid-area: graphic_one;
-                border: 2px solid orangered;
             }
             #tb_graphic_two{
                 grid-area: graphic_two;
-                border: 2px solid aqua;
             }
 
             #upscale{
                 grid-area: upscale;
-                border: 2px solid purple;
             }
             #luxury{
                 grid-area: luxury;
-                border: 2px solid green;
             }
             #elegant{
                 grid-area: elegant;
-                border: 2px solid red;
             }
 
             /**Implementing inner boxes for grid**/
             .grid_box{
-                color: rgba(0, 0, 0, .7);
+                color: white;
+                text-align: center;
+                font-family: 'Montserrat', sans-serif;
                 width: 80%;
                 margin: auto;
-                height: 500px;
-                background-size: cover;
+                height: 275px;
+                
 
+            }
+            .grid_box p{
+                display: none;
+            }
+            .grid_box:hover h3{
+                display: none;
+            }
+
+            .grid_box:hover p{
+                padding:80px 10px 0px 10px;
+                display: block;
+                line-height: 1.5em;
             }
             
             .upscale_img{
-                background-image: url(img/upscale.jpg);
+                background: linear-gradient( rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(img/upscale.jpg);
+                background-size: cover;
             }
+
+            .upscale_img:hover{
+                background: linear-gradient( rgba(0, 152, 182, 0.623), rgba(0, 152, 182, 0.623)), url(img/upscale.jpg);
+                background-size: cover;
+            }
+
+
             .luxury_img{
-                background-image: url(img/luxury.jpg);
+                background: linear-gradient( rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(img/luxury.jpg);
+                background-size: cover;
+            }
+            .luxury_img:hover{
+                background: linear-gradient( rgba(0, 152, 182, 0.623), rgba(0, 152, 182, 0.623)), url(img/luxury.jpg);
+                background-size: cover;
             }
             .elegant_img{
-                background-image: url(img/elegant.jpg);
+                background: linear-gradient( rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(img/elegant.jpg);
+                background-size: cover;
             }
+            .elegant_img:hover{
+                background: linear-gradient( rgba(0, 152, 182, 0.623), rgba(0, 152, 182, 0.623)), url(img/elegant.jpg);
+                background-size: cover;
+            }
+
+            #testimonial{
+                height: 700px;
+                width: 100%;
+                border: 2px solid red;
+            }
+            #logo img{
+                max-width: 100%;
+                /* object-fit: contain; */
+                height: 100%;
+
+            }
+            #user_info img{
+                max-width: 100%;
+                /* object-fit: contain; */
+                height: 48%;
+                float: right;
+                margin: 14px;
+
+            }
+
 
             /**Implementing Media Query for 1024 breakpoint**/
             @media screen and (max-width: 1024px){
@@ -282,7 +334,7 @@
                     bottom: 0;
                     left: 0;
                     background: rgba(0, 152, 182, 0.623);
-                    top: 50px;
+                    top: 55px;
                     transition: opacity 1s;
                     overflow: auto;
                     
@@ -301,6 +353,17 @@
                     font-weight: bolder;
 
                 }
+                .banner_box:first-child {
+                    display:none;
+                }
+                .banner_box #profile_signup {
+                    margin-left: none;
+                    margin: auto;
+                }
+                #grid_container{
+                    grid-column-gap: 0px;
+                    grid-row-gap: 46px;
+                }
                 
             }
 
@@ -308,11 +371,15 @@
         </style>
         <!--Montserrat font from Google-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800" rel="stylesheet">
+
+
     </head>
     <body>
         <header id="headstruct">
             <div class="block_contain"><!--Flex container-->
-                <div id="logo"><img src="https://via.placeholder.com/100x50" alt="logo"></div><!--Flex item 1-->
+                <div id="logo">
+                    <img src="img/logo.png" alt="logo">
+                </div><!--Flex item 1-->
                 <nav id="navstruct">
                     <ul id="listruct">
                         <li><a href="about.html">About</a></li>
@@ -323,15 +390,15 @@
                     </ul>
                 </nav><!--flex item 2-->
                 <div id="user_info">
-                        <img src="https://via.placeholder.com/75x50" alt="notification bell">
-                        <img src="https://via.placeholder.com/75x50" alt="profile icon">
+                    <img src="img/notification_icon.PNG" style="margin-top: 15px;" alt="notification bell">
+                    <img src="img/person_icon.PNG" alt="profile icon">
                 </div><!--flex item 3-->
                 <!--Mobile Navigation-->
                 <nav id="navstruct_mobile"><span id="hamburger_icon"> &#9776;</span>
-                    <div id="user_info_mobile" style="display: none;">
-                            <img src="https://via.placeholder.com/75x50" alt="notification bell">
-                            <img src="https://via.placeholder.com/75x50" alt="profile icon">
-                    </div>
+                   <!-- <div id="user_info_mobile" style="display: none;">
+                        <img src="img/notification_icon.PNG" style="margin-top: 15px;" alt="notification bell">
+                        <img src="img/person_icon.PNG" alt="profile icon">
+                    </div>-->
                     <ul id="listruct_mobile" style="display: none;">
                         <li><a href="about.html">About</a></li>
                         <li><a href="process.html">Process</a></li>
@@ -382,27 +449,33 @@
             </div>
             <div id="upscale">
                 <section class="grid_box upscale_img">
-
+                    <h3>Upscale</h3>
+                    <p>This is sample text to demonstrate text on hover.</p>
                 </section>
             </div>
             <div id="luxury">
                 <section class="grid_box luxury_img">
-
+                    <h3>Luxury</h3>
+                    <p>This is sample text to demonstrate text on hover.</p>
                 </section>
             </div>
             <div id="elegant">
                 <section class="grid_box elegant_img">
-
+                    <h3>Elegant</h3>
+                    <p>This is sample text to demonstrate text on hover.</p>
                 </section>
             </div>
             <div id="tb_graphic_two">
                 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="-370 0 1224 82"><defs><style>.cls-1{fill:#111;}.cls-2{font-size:26px;fill:#fff;font-family:Montserrat-Regular, Montserrat;}.cls-3{letter-spacing:0em;}.cls-4{letter-spacing:0.02em;}.cls-5{letter-spacing:0em;}.cls-6{letter-spacing:0em;}.cls-7{letter-spacing:0em;}.cls-8{letter-spacing:-0.02em;}.cls-9{letter-spacing:-0.01em;}</style></defs><title>bottom_graphic</title><polygon class="cls-1" points="868 82 181 82 226 0 868 0 868 82"/><polygon class="cls-1" points="138 82 185 0 154 0 107 82 138 82"/><polygon class="cls-1" points="104 82 151 0 80 0 27 82 104 82"/><polygon class="cls-1" points="24 82 77.5 0 51 0 0 82 24 82"/><text class="cls-2" transform="translate(331.11 49.29)">A<tspan class="cls-3" x="18.64" y="0">p</tspan><tspan x="36.19" y="0">a</tspan><tspan class="cls-4" x="51.53" y="0">r</tspan><tspan x="62.35" y="0">t</tspan><tspan class="cls-5" x="72.9" y="0">m</tspan><tspan x="100.54" y="0">ents in t</tspan><tspan class="cls-5" x="205.89" y="0">h</tspan><tspan class="cls-6" x="223.54" y="0">e </tspan><tspan class="cls-7" x="246.06" y="0">h</tspan><tspan class="cls-8" x="263.71" y="0">e</tspan><tspan x="279.03" y="0">a</tspan><tspan class="cls-4" x="294.37" y="0">r</tspan><tspan x="305.18" y="0">t of t</tspan><tspan class="cls-7" x="365.03" y="0">h</tspan><tspan x="382.69" y="0">e ci</tspan><tspan class="cls-9" x="426.83" y="0">t</tspan><tspan x="437.13" y="0">y</tspan></text></svg>
             </div>
         </div><!--End of grid container-->
+
+
         <footer>
 
             
         </footer>
+
         <script>
             document.getElementById("hamburger_icon").addEventListener('click', function(){
                 
