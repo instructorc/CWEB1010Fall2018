@@ -175,6 +175,7 @@
             form > input, select, button {
                 flex: 1 0 60%;
                 height: 25px;
+                outline: none;
                 
             }
             form > label {
@@ -303,6 +304,7 @@
                 margin: 14px;
 
             }
+ 
 
 
             /**Implementing Media Query for 1024 breakpoint**/
@@ -371,6 +373,11 @@
         </style>
         <!--Montserrat font from Google-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800" rel="stylesheet">
+        <!--Implementing JQuery Flickity slider plugin-->
+        <!-- JavaScript -->
+        <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 
 
     </head>
@@ -469,12 +476,29 @@
                 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="-370 0 1224 82"><defs><style>.cls-1{fill:#111;}.cls-2{font-size:26px;fill:#fff;font-family:Montserrat-Regular, Montserrat;}.cls-3{letter-spacing:0em;}.cls-4{letter-spacing:0.02em;}.cls-5{letter-spacing:0em;}.cls-6{letter-spacing:0em;}.cls-7{letter-spacing:0em;}.cls-8{letter-spacing:-0.02em;}.cls-9{letter-spacing:-0.01em;}</style></defs><title>bottom_graphic</title><polygon class="cls-1" points="868 82 181 82 226 0 868 0 868 82"/><polygon class="cls-1" points="138 82 185 0 154 0 107 82 138 82"/><polygon class="cls-1" points="104 82 151 0 80 0 27 82 104 82"/><polygon class="cls-1" points="24 82 77.5 0 51 0 0 82 24 82"/><text class="cls-2" transform="translate(331.11 49.29)">A<tspan class="cls-3" x="18.64" y="0">p</tspan><tspan x="36.19" y="0">a</tspan><tspan class="cls-4" x="51.53" y="0">r</tspan><tspan x="62.35" y="0">t</tspan><tspan class="cls-5" x="72.9" y="0">m</tspan><tspan x="100.54" y="0">ents in t</tspan><tspan class="cls-5" x="205.89" y="0">h</tspan><tspan class="cls-6" x="223.54" y="0">e </tspan><tspan class="cls-7" x="246.06" y="0">h</tspan><tspan class="cls-8" x="263.71" y="0">e</tspan><tspan x="279.03" y="0">a</tspan><tspan class="cls-4" x="294.37" y="0">r</tspan><tspan x="305.18" y="0">t of t</tspan><tspan class="cls-7" x="365.03" y="0">h</tspan><tspan x="382.69" y="0">e ci</tspan><tspan class="cls-9" x="426.83" y="0">t</tspan><tspan x="437.13" y="0">y</tspan></text></svg>
             </div>
         </div><!--End of grid container-->
+        <div id="testimonial">
+            <div class="main-carousel" class="carousel" data-flickity='{ "autoPlay": true }'>
+                <div class="carousel-cell"><img src="https://orig00.deviantart.net/f5ff/f/2015/303/b/2/happy_nightmare_night_by_shimazun-d9ewp6a.gif"></div>
+                <div class="carousel-cell"><img src="https://mancunion.com/wp-content/uploads/sites/6/anurhanjan-1300x700.jpg"></div>
+                <div class="carousel-cell"><img src="http://angelspetworld.com/wp-content/uploads/2016/10/IMG_C3AEFC-51267E-C4D6FE-45CE68-5B7ECC-44D056-1300x700.jpg"></div>
+                
+              </div>
+
+        </div>
 
 
         <footer>
 
             
         </footer>
+        <script>
+        $('.main-carousel').flickity({
+            // options
+            cellAlign: 'left',
+            contain: true
+            });
+        
+        </script>
 
         <script>
             document.getElementById("hamburger_icon").addEventListener('click', function(){
