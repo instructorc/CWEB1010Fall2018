@@ -54,9 +54,12 @@ html, body, div, span, object, iframe,
                 
             }
             h3{
-                font-size: 2.5em;
+                font-size: 2.8em;
                 font-weight: 300;
                 line-height: 262px;
+            }
+            h4{
+                text-align: center;
             }
             #headstruct{
                 width: 100%;
@@ -199,7 +202,18 @@ html, body, div, span, object, iframe,
                 height: auto;
                 text-transform: uppercase;
                 border: none;
+                transition: all 2s;
             }
+            form > button:hover {
+                background-color:#1e7485;
+                
+            }
+            /**Carousel**/
+            .carousel-cell {
+                width: 100%; /* full width */
+                height: 760px; /* height of carousel */
+                background-color: #eee;
+              }
             /**Implementing CSS Grid**/
             #grid_container{
                 display: grid;
@@ -211,7 +225,7 @@ html, body, div, span, object, iframe,
                 grid-column-gap: 20px;
                 grid-row-gap: 80px;
                 grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: repeat(3, 1fr);
+                
 
             }
 
@@ -262,11 +276,13 @@ html, body, div, span, object, iframe,
             .upscale_img{
                 background: linear-gradient( rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../img/upscale.jpg);
                 background-size: cover;
+                
             }
 
             .upscale_img:hover{
                 background: linear-gradient( rgba(0, 152, 182, 0.623), rgba(0, 152, 182, 0.623)), url(../img/upscale.jpg);
                 background-size: cover;
+                font-size: 1.8em;
             }
 
 
@@ -277,26 +293,28 @@ html, body, div, span, object, iframe,
             .luxury_img:hover{
                 background: linear-gradient( rgba(0, 152, 182, 0.623), rgba(0, 152, 182, 0.623)), url(../img/luxury.jpg);
                 background-size: cover;
+                font-size: 1.8em;
             }
             .elegant_img{
                 background: linear-gradient( rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../img/elegant.jpg);
                 background-size: cover;
             }
             .elegant_img:hover{
-                background: linear-gradient( rgba(0, 152, 182, 0.623), rgba(0, 152, 182, 0.623)), url(img/elegant.jpg);
+                background: linear-gradient( rgba(0, 152, 182, 0.623), rgba(0, 152, 182, 0.623)), url(../img/elegant.jpg);
                 background-size: cover;
+                font-size: 1.8em;
             }
 
             #testimonial{
-                height: 700px;
+                
                 width: 100%;
-                border: 2px solid red;
+                margin-top: 7em;
             }
             #apartment_search_block{
-                height: 700px;
+                height: 800px;
                 width: 100%;
                 background-color: #ccc;
-                border: 2px solid purple;
+                margin-top: 9em;
                 text-align: center;
                 
                 
