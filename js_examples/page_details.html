@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>JavaScript Examples</title>
+      
+    </head>
+    <body>
+        <div id="box">Click here</div>
+
+    <script>
+        
+        document.getElementById('box').addEventListener('click', function(){
+
+            var doctype, url, title;
+
+            //get doctype of document
+            doctype = document.doctype.name;
+            //get url of document
+            url = document.URL;
+            // get title of document
+            title = document.title;
+            //alert document details using window.alert() method
+            window.alert("Doctype: " + doctype + " URL: " + url + " Title: " + title);
+        });
+    </script>
+    </body>
+</html>
