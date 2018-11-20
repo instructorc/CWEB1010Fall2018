@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS Practice</title>
+        <!--Linking to External JS document-->
+        
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="box" style="width: 200px; height: 200px; padding: 10px; background-color: blue; color: white;">Click Here</div>
+
+    <script>
+
+        document.getElementById('box').addEventListener('click', function(){
+            var doctype, url, title;
+            //get the doctype
+               doctype =  document.doctype.name;
+            //get the page URL
+               url = document.URL;
+            //get the title
+               title = document.title;
+
+            //alert information to alert box
+            alert("The doctype is: " + doctype + " The url is: " + url + " The title is: "+ title);
+        });
+        
+    </script>
+    </body>
+</html>
