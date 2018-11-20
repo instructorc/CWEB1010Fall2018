@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS Example One</title>
+        <!--Implenting an External JS file called calc.js-->
+        <script src="calc.js"></script>
+    </head>
+    <body>
+
+        <div id="box">Click Here</div>
+        <script>
+            document.getElementById('box').addEventListener('click', function(){
+                //declare variables
+                var doctype, url, title;
+
+                //get doctype
+                doctype = document.doctype.name;
+                //get page url
+                url = document.URL;
+
+                //get the title
+                title = document.title;
+                //alert info using window alert box
+                window.alert("Doctype: " + doctype + " URL: " + url + " Title: " + title);
+            });
+        
+        
+        </script>
+    </body>
+</html>
