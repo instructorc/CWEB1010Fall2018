@@ -17,6 +17,9 @@ html, body, div, span, object, iframe,
                 vertical-align:baseline;
                 background:transparent;
             }
+            html{
+                scroll-behavior: smooth;
+            }
             body{
                 font-family: 'Montserrat', sans-serif;
             }
@@ -208,6 +211,8 @@ html, body, div, span, object, iframe,
                 background-color:#1e7485;
                 
             }
+
+    
             /**Carousel**/
             .carousel-cell {
                 width: 100%; /* full width */
