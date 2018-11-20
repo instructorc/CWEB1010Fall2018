@@ -339,6 +339,18 @@ html, body, div, span, object, iframe,
 
             }
 
+            /**Apartment section style rules**/
+            #apartment_container{
+                display: flex;
+                width: 100%;
+                
+            }
+            .apart_struct{
+                flex: 1 0 500px;
+                border: 1px solid black;
+                height: 500px;
+            }
+
  
 
 
