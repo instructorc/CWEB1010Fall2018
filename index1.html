@@ -120,13 +120,23 @@
             </div>
         </div><!--End of grid container-->
         <section id="apartment_search_block">
-            <h3>Search Luxury Apartments</h3>
+            <h3 style="line-height: 0px; padding: 30px 0px;">Search Luxury Apartments</h3>
+            <select  id="region" onclick="getByRegion(this.value)">
+                <option value="">Please select region</option>
+                <option value="Downtown West">Downtown West</option>
+                <option value="Downtown East">Downtown East</option>
+                <option value="Downtown North">Downtown North</option>
+                <option value="Downtown South">Downtown South</option>
+            </select>
             <div id="apartment_container">
+
                 <aside class="apart_struct">
                     <div id="apart_boxes">
-                        <img src="img/apartment_logo/niclogoblack_logo.png" width="150" id="nic" alt="nic on fifth logo">
-                        <img src="img/apartment_logo/nicolette_365.jpg" width="150" id="nicolette" alt="nicolette 365 logo">
-                        <img src="img/apartment_logo/nordhaus-logo.png" width="150" id="nordhaus" alt="nordhaus logo">
+                        <img src="img/apartment_logo/niclogoblack_logo.png" class="apart_logo" data-id="2" id="nic" alt="nic on fifth logo">
+                        <img src="img/apartment_logo/nicolette_365.jpg" class="apart_logo" data-id="1" id="nicolette" alt="nicolette 365 logo">
+                        <img src="img/apartment_logo/nordhaus-logo.png" class="apart_logo" data-id="3" id="nordhaus" alt="nordhaus logo">
+                        <img src="img/apartment_logo/latitude45_logo.jpg" class="apart_logo" data-id="4" id="nordhaus" alt="latitude 45 logo">
+                        <img src="img/apartment_logo/encore.png" class="apart_logo" data-id="5" id="nordhaus" alt="encore logo">
                     </div>
                 </aside>
                 <aside class="apart_struct">
@@ -169,15 +179,8 @@
 
             
         </footer>
-        <script>
-        $('.main-carousel').flickity({
-            // options
-            cellAlign: 'left',
-            contain: true
-            });
-        
-        </script>
 
+        <script src="js/apartment_data.js"></script>
         <script>
             document.getElementById("hamburger_icon").addEventListener('click', function(){
                 
@@ -192,13 +195,77 @@
                 
             });
 
-            document.querySelector("a[href='#apartment_search_block']").scrollIntoView({block: "end"});
+       
+            //refesh images once select region is clicked
+            function generateImages(){
+                     //get all images
+                var images = document.getElementsByClassName('apart_logo');
+                for(var w = 0; w < images.length; w++){
+                    images[w].style.visibility ="visible";
+                }
+            }
+            /**filter by region**/
+            function getByRegion(selection){
+                var data= [];
+                for(var x = 0; x < apartment.length; x++){
+                    if(apartment[x].city_region === selection){
+                    data.push(apartment[x]);
+                    console.log(apartment[x].apartment);
+                    }
 
+              
+                }
+                
+                generateImages();
+                filterApartments(data, selection);
+                initMap(data);
+            }
+
+            function filterApartments(data, selection){
+                //get all images
+                var images = document.getElementsByClassName('apart_logo');
+                console.log(images[0].src);
+               
+                    for(var x = 0; x < data.length; x++){
+                        
+                        if(images[parseInt(data[x].property_id)].dataset.id == selection){
+                            
+                            images[x].style.visibility="visible";
+                        }else{
+                            images[x].style.visibility="hidden";
+                        }
+                    }
+                    
+                }
+            
+            
+            
+            /**Implementing Google Map **/
+            function initMap(data) {
+                var myLatLng = [{lat: 44.981761, lng:-93.2652097}];
+
+                var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 14,
+                center: myLatLng[0]
+                });
+
+                //declare variables
+                var marker, i;
+                
+
+                //iterate through the apartment data and create new instances of a marper that will be applied to map
+                for(i = 0; i < data.length; i++) {  
+                    marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(data[i].latitude, data[i].longitude),
+                        map: map
+                    });
+                }
+            }
 
 
 
         </script>
-
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEP-pNQmS4jEkCKu3dGRpnu-wZ86YGN3Q&callback=initMap"></script>
 
     </body>
 </html>
