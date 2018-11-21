@@ -7,9 +7,15 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" type="text/css" rel="stylesheet">
     </head>
     <body>
-        <div id="box" style="width: 200px; height: 200px; padding: 10px; background-color: blue; color: white;">Click Here</div>
-
+        <div id="box" style="width: 200px; height: 200px; padding: 10px; background-color: blue; color: white;">Output Document info</div>
+        <div id="box_two" style="width: 200px; height: 200px; padding: 10px; background-color: orangered; color: white;">Output courses</div> 
     <script>
+
+        document.querySelector("#box_two").addEventListener('click', () =>{
+            var names = ["CWEB1010", "CWEB1011", "CWEB1110", "MATH1250"];
+            var number = () => {names.forEach(x => window.alert(x)) }
+        } );
+
 
         document.getElementById('box').addEventListener('click', function(){
             var doctype, url, title;
