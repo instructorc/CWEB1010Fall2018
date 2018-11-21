@@ -121,7 +121,7 @@
         </div><!--End of grid container-->
         <section id="apartment_search_block">
             <h3 style="line-height: 0px; padding: 30px 0px;">Search Luxury Apartments</h3>
-            <select  id="region" onclick="getByRegion(this.value)">
+            <select  id="region" onchange="getByRegion(this.value)">
                 <option value="">Please select region</option>
                 <option value="Downtown West">Downtown West</option>
                 <option value="Downtown East">Downtown East</option>
@@ -217,8 +217,8 @@
                 }
                 
                 generateImages();
-                filterApartments(data, selection);
-                initMap(data);
+                filterApartments(data, selection); //call function passing two arguments which apartments should display
+                initMap(data);//call the function and pass the selected data array and determine which markers should display
             }
 
             function filterApartments(data, selection){
@@ -227,12 +227,13 @@
                 console.log(images[0].src);
                
                     for(var x = 0; x < data.length; x++){
-                        
-                        if(images[parseInt(data[x].property_id)].dataset.id == selection){
-                            
-                            images[x].style.visibility="visible";
-                        }else{
-                            images[x].style.visibility="hidden";
+                        for(var w = 0; w < images.length; w++){
+                            if(data[x].property_id == images[w].dataset.id){
+                                
+                                images[w].style.visibility="visible";
+                            }else{
+                                images[w].style.visibility="hidden";
+                            }
                         }
                     }
                     
