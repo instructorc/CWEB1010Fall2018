@@ -132,11 +132,11 @@
 
                 <aside class="apart_struct">
                     <div id="apart_boxes">
-                        <img src="img/apartment_logo/niclogoblack_logo.png" class="apart_logo" data-id="2" id="nic" alt="nic on fifth logo">
-                        <img src="img/apartment_logo/nicolette_365.jpg" class="apart_logo" data-id="1" id="nicolette" alt="nicolette 365 logo">
-                        <img src="img/apartment_logo/nordhaus-logo.png" class="apart_logo" data-id="3" id="nordhaus" alt="nordhaus logo">
-                        <img src="img/apartment_logo/latitude45_logo.jpg" class="apart_logo" data-id="4" id="nordhaus" alt="latitude 45 logo">
-                        <img src="img/apartment_logo/encore.png" class="apart_logo" data-id="5" id="nordhaus" alt="encore logo">
+                        <img src="img/apartment_logo/niclogoblack_logo.png" class="apart_logo" data-id="2" id="nic" alt="nic on fifth logo" style="display: none;">
+                        <img src="img/apartment_logo/nicolette_365.jpg" class="apart_logo" data-id="1" id="nicolette" alt="nicolette 365 logo" style="display: none;">
+                        <img src="img/apartment_logo/nordhaus-logo.png" class="apart_logo" data-id="3" id="nordhaus" alt="nordhaus logo" style="display: none;">
+                        <img src="img/apartment_logo/latitude45_logo.jpg" class="apart_logo" data-id="4" id="nordhaus" alt="latitude 45 logo" style="display: none;">
+                        <img src="img/apartment_logo/encore.png" class="apart_logo" data-id="5" id="nordhaus" alt="encore logo" style="display: none;">
                     </div>
                 </aside>
                 <aside class="apart_struct">
@@ -201,7 +201,7 @@
                      //get all images
                 var images = document.getElementsByClassName('apart_logo');
                 for(var w = 0; w < images.length; w++){
-                    images[w].style.visibility ="visible";
+                    images[w].style.visibility ="hidden";
                 }
             }
             /**filter by region**/
@@ -216,28 +216,24 @@
               
                 }
                 
-                generateImages();
+                //generateImages();
                 filterApartments(data, selection); //call function passing two arguments which apartments should display
                 initMap(data);//call the function and pass the selected data array and determine which markers should display
             }
 
-            function filterApartments(data, selection){
+            function filterApartments(data, ){
                 //get all images
                 var images = document.getElementsByClassName('apart_logo');
-                console.log(images[0].src);
-               
-                    for(var x = 0; x < data.length; x++){
-                        for(var w = 0; w < images.length; w++){
-                            if(data[x].property_id == images[w].dataset.id){
-                                
-                                images[w].style.visibility="visible";
-                            }else{
-                                images[w].style.visibility="hidden";
-                            }
-                        }
-                    }
-                    
+                //iterate through the data array and only show images that are included in array
+                for(var i = 0; i < data.length; i++){
+                    //display the images from the data array
+                    images[data[i].property_id].style.display = "block";
+
                 }
+                
+                
+                    
+            }
             
             
             
