@@ -215,20 +215,25 @@
 
               
                 }
+                //get one of the values in the array and pass in the propery_id from the array
                 
                 //generateImages();
                 filterApartments(data, selection); //call function passing two arguments which apartments should display
                 initMap(data);//call the function and pass the selected data array and determine which markers should display
             }
 
-            function filterApartments(data, ){
+            function filterApartments(data,selection){
+
+                
                 //get all images
                 var images = document.getElementsByClassName('apart_logo');
                 //iterate through the data array and only show images that are included in array
+                //var index = data.findIndex(data.city_region == selection);
                 for(var i = 0; i < data.length; i++){
                     //display the images from the data array
-                    images[data[i].property_id].style.display = "block";
-
+                        //make a decision as to 
+                        images[data[i].property_id].style.display = "block";
+                    
                 }
                 
                 
