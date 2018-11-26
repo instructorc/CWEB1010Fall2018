@@ -213,11 +213,67 @@ html, body, div, span, object, iframe,
             }
 
             /**Apartment section style rules**/
+
+            #filter{
+                display: flex;
+                height: 155px;
+                width: 80%;
+                padding: 2%;
+                align-items:center;
+                margin: auto;
+
+            }
+            #filter select{
+                color: black;
+                max-width: 300px;
+                font-family: 'Montserrat', sans-serif;
+                min-width: 400px;
+            }
+            #filter label{
+                
+                flex: 1 0 400px;
+            }
+            .slidecontainer {
+                width: 100%;
+            }
+            
+            .slider {
+                -webkit-appearance: none;
+                width: 100%;
+                height: 25px;
+                background: #d3d3d3;
+                outline: none;
+                opacity: 0.7;
+                -webkit-transition: .2s;
+                transition: opacity .2s;
+            }
+            
+            .slider:hover {
+                opacity: 1;
+            }
+            
+            .slider::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 25px;
+                height: 25px;
+                background: #0098B6;
+                cursor: pointer;
+            }
+            
+            .slider::-moz-range-thumb {
+                width: 25px;
+                height: 25px;
+                background: #0098B6;
+                cursor: pointer;
+            }
+
+            
             #apartment_search_block{
-                height: 800px;
+                
                 width: 100%;
                
-                margin-top: 9em;
+                margin-top: 6em;
                 text-align: center;
                 
                 
@@ -229,12 +285,12 @@ html, body, div, span, object, iframe,
             }
             .apart_struct{
                 flex: 1 0 500px;
-                border: 1px solid black;
-                height: 500px;
+                
+                height: 700px;
             }
             #map{
                 width: 100%;
-                height: 500px;
+                height: 700px;
             }
 
             #apart_boxes img {
@@ -244,16 +300,21 @@ html, body, div, span, object, iframe,
                 justify-self: center;
             }
             #apart_boxes{
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                grid-template-rows: repeat(7, 100px);
+                display: flex;
+                flex-wrap: wrap;
             }
 
-            #apartment_search_block select{
-                color: black;
+
+            #apart_boxes img{
+                height: 85px;
+                flex: 1 0 145px;
+                max-width: 150px;
+                object-fit: contain;
+                transition: all 3s;
+                
             }
 
-            img[data-id="1"]{
+            /*img[data-id="1"]{
                 grid-column: 2;
                 grid-row: 1;
                 
@@ -276,7 +337,7 @@ html, body, div, span, object, iframe,
                 grid-column: 1;
                 grid-row: 2;
                 
-            }
+            }*/
 
 
     

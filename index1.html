@@ -121,22 +121,30 @@
         </div><!--End of grid container-->
         <section id="apartment_search_block">
             <h3 style="line-height: 0px; padding: 30px 0px;">Search Luxury Apartments</h3>
-            <select  id="region" onchange="getByRegion(this.value)">
-                <option value="">Please select region</option>
-                <option value="Downtown West">Downtown West</option>
-                <option value="Downtown East">Downtown East</option>
-                <option value="Downtown North">Downtown North</option>
-                <option value="Downtown South">Downtown South</option>
-            </select>
+            <div id="filter">
+                <label> Select city region<br>
+                    <select  id="region" onchange="getByRegion(this.value)">
+                        <option value="all">Please select region</option>
+                        <option value="Downtown West">Downtown West</option>
+                        <option value="Downtown East">Downtown East</option>
+                        <option value="Downtown North">Downtown North</option>
+                        <option value="Downtown South">Downtown South</option>
+                    </select>
+                </label>
+
+                <label>Select Floor preference <br>
+                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                </label>
+            </div>
             <div id="apartment_container">
 
                 <aside class="apart_struct">
                     <div id="apart_boxes">
-                        <img src="img/apartment_logo/niclogoblack_logo.png" class="apart_logo" data-id="2" id="nic" alt="nic on fifth logo" style="display: none;">
-                        <img src="img/apartment_logo/nicolette_365.jpg" class="apart_logo" data-id="1" id="nicolette" alt="nicolette 365 logo" style="display: none;">
-                        <img src="img/apartment_logo/nordhaus-logo.png" class="apart_logo" data-id="3" id="nordhaus" alt="nordhaus logo" style="display: none;">
-                        <img src="img/apartment_logo/latitude45_logo.jpg" class="apart_logo" data-id="4" id="nordhaus" alt="latitude 45 logo" style="display: none;">
-                        <img src="img/apartment_logo/encore.png" class="apart_logo" data-id="5" id="nordhaus" alt="encore logo" style="display: none;">
+                        <img src="img/apartment_logo/niclogoblack_logo.png" class="apart_logo" data-id="2" id="nic" alt="nic on fifth logo" >
+                        <img src="img/apartment_logo/nicolette_365.jpg" class="apart_logo" data-id="1" id="nicolette" alt="nicolette 365 logo">
+                        <img src="img/apartment_logo/nordhaus-logo.png" class="apart_logo" data-id="3" id="nordhaus" alt="nordhaus logo">
+                        <img src="img/apartment_logo/latitude45_logo.jpg" class="apart_logo" data-id="4" id="nordhaus" alt="latitude 45 logo">
+                        <img src="img/apartment_logo/encore.png" class="apart_logo" data-id="5" id="nordhaus" alt="encore logo">
                     </div>
                 </aside>
                 <aside class="apart_struct">
@@ -194,6 +202,12 @@
                 }
                 
             });
+            document.addEventListener('load', function(){
+                var images = document.getElementsByClassName('apart_logo');
+                for(var j = 0; j < images.length; j++){
+                    images[j].style.display = "block";
+                }
+            });
 
        
             //refesh images once select region is clicked
@@ -201,7 +215,7 @@
                      //get all images
                 var images = document.getElementsByClassName('apart_logo');
                 for(var w = 0; w < images.length; w++){
-                    images[w].style.visibility ="hidden";
+                    images[w].style.display = "none";
                 }
             }
             /**filter by region**/
@@ -217,14 +231,14 @@
                 }
                 //get one of the values in the array and pass in the propery_id from the array
                 
-                //generateImages();
+                //
                 filterApartments(data, selection); //call function passing two arguments which apartments should display
                 initMap(data);//call the function and pass the selected data array and determine which markers should display
             }
 
-            function filterApartments(data,selection){
+            function filterApartments(data, selection){
 
-                
+                generateImages();
                 //get all images
                 var images = document.getElementsByClassName('apart_logo');
                 //iterate through the data array and only show images that are included in array
@@ -232,14 +246,17 @@
                 for(var i = 0; i < data.length; i++){
                     //display the images from the data array
                         //make a decision as to 
-                        images[data[i].property_id].style.display = "block";
+                        for(var w = 0; w < images.length; w++){
+                            if((data[i].property_id == images[w].dataset.id) || (selection == "all")){
+                                images[w].style.display = "block";
+                            }
+                        }
                     
                 }
                 
                 
                     
             }
-            
             
             
             /**Implementing Google Map **/
@@ -264,6 +281,15 @@
                 }
             }
 
+
+            var slider = document.getElementById("myRange");
+            var output = document.getElementById("demo");
+            output.innerHTML = slider.value; // Display the default slider value
+
+            // Update the current slider value (each time you drag the slider handle)
+            slider.oninput = function() {
+                output.innerHTML = this.value;
+            }
 
 
         </script>
