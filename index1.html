@@ -70,12 +70,12 @@
                         <p>The only site where apartments provide you with thier best offer based on your preferences</p>
                         <form>
                             
-                            <label>First Name: </label> <input type="text" maxlength="30"  name="fname">
-                            <label>Last Name: </label> <input type="text" maxlength="30"  name="lname">
-                            <label>Email: </label> <input type="text" maxlength="30" >
-                            <label>Preferred Move-in Month:</label> <input type="month" name="move_in">
+                            <label>First Name: </label> <input type="text" maxlength="30" id="first"  name="fname">
+                            <label>Last Name: </label> <input type="text" maxlength="30" id="last"  name="lname">
+                            <label>Email: </label> <input type="text" id="email" maxlength="30" >
+                            <label>Preferred Move-in Month:</label> <input type="month" id="preferred_month" name="move_in">
                             <label>Preferred Rent Range:</label>
-                            <select name="rent_range">
+                            <select name="rent_range" id="rent_range">
                                 <option value="1">$650 - $999</option>
                                 <option value="2">$1000 - $1399</option>
                                 <option value="3">$1400 - $1599</option>
@@ -88,7 +88,7 @@
                                 <option value="10">$5000+</option>
                             </select> 
                          
-                            <button type="button">Create Free Profile</button>
+                            <button type="button" id="submit">Create Free Profile</button>
                         </form>
                     </section>
                 </div><!--Flex item two-->
@@ -156,6 +156,7 @@
             </div>
         </section>
         <div id="testimonial">
+                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="-370 0 1224 82"><defs><style>#testimonial .cls-1{fill:#111;}#testimonial .cls-2{font-size:46px;fill:#fff;font-family:Montserrat-Regular, Montserrat;}#testimonial .cls-3{letter-spacing:-0.05em;} #testimonial .cls-4{letter-spacing:0em;}#testimonial .cls-5{letter-spacing:0em;}</style></defs><title>page_bottom_testimonial</title><polygon class="cls-1" points="868 82 181 82 226 0 868 0 868 82"/><polygon class="cls-1" points="138 82 185 0 154 0 107 82 138 82"/><polygon class="cls-1" points="104 82 151 0 80 0 27 82 104 82"/><polygon class="cls-1" points="24 82 77.5 0 51 0 0 82 24 82"/><text></text><text class="cls-2" transform="translate(392 57)"><tspan class="cls-3">T</tspan><tspan class="cls-4" x="23.87" y="0">esti</tspan><tspan class="cls-5" x="105.2" y="0">m</tspan><tspan x="154.1" y="0">onial</tspan></text></svg>
             <div class="main-carousel" class="carousel" data-flickity='{ "autoPlay": true }'>
                 <div class="carousel-cell">
                     <section class="test_qoute">
@@ -191,6 +192,76 @@
 
         <script src="js/apartment_data.js"></script>
         <script>
+            //this will allow me to format the affordable payment to a US currency value
+            // Create our number formatter.
+            var formatter = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 2,
+            // the default value for minimumFractionDigits depends on the currency
+            // and is usually already 2
+            });
+
+            
+            
+
+            
+            //Creating an object that will hold the data for the renter
+            var renter ={
+                renterFirstName: "",
+                renterCalcPercentage: .25,
+                renterLastName: "",
+                renterEmail: "",
+                renterPreferredMonth: "",
+                renterRentRange: "",
+                calculateAffordablePayment: function(){
+                    if(this.renterRentRange == 1){
+                        return 999.00- (1 * this.renterCalcPercentage);
+                    }else if(this.renterRentRange == 2){
+                        return 1399.00- (1 * this.renterCalcPercentage);
+                    }else if(this.renterRentRange == 3){
+                        return 1599.00- (1 * this.renterCalcPercentage);
+                    }else if(this.renterRentRange == 4){
+                        return 1999.00- (1 * this.renterCalcPercentage);
+                    }else if(this.renterRentRange == 5){
+                        return 2499.00- (1 * this.renterCalcPercentage);
+                    }else if(this.renterRentRange == 6){
+                        return 2999.00- (1 * this.renterCalcPercentage);
+                    }else if(this.renterRentRange == 7){
+                        return 3499.00- (1 * this.renterCalcPercentage);
+                    }else if(this.renterRentRange == 8){
+                        return 3999.00- (1 * this.renterCalcPercentage);
+                    }else if(this.renterRentRange == 9){
+                        return 4999.00 - (1 * this.renterCalcPercentage);
+                    }else if(this.renterRentRange == 10){
+                        return 10000.00- (1 * this.renterCalcPercentage);
+                    }
+                }
+
+
+
+            }//end of renter object
+
+            /**Create a function that will gather data and attach an addEventListener that will
+             * listen for the click of the button**/
+            document.getElementById('submit').addEventListener('click', ()=>{
+                renter.renterFirstName = document.getElementById('first').value;
+                renter.renterLastName = document.getElementById('last').value;
+                renter.renterEmail = document.getElementById('email').value;
+                renter.renterPreferredMonth = document.getElementById('preferred_month').value;
+                renter.renterRentRange = document.getElementById('rent_range').value;
+
+                //Test to make sure values are accurately being gather from elements
+                console.log(`The first name is ${renter.renterFirstName} the second name is ${renter.renterLastName} the email is ${renter.renterEmail} the preferred month is ${renter.renterPreferredMonth} the rentRange is ${renter.renterRentRange} the amount this renter can afford is: ${formatter.format(renter.calculateAffordablePayment())}`);
+
+                //Test to make sure our function is calculating correctly
+
+            })
+
+
+
+
+
             document.getElementById("hamburger_icon").addEventListener('click', function(){
                 
 

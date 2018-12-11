@@ -180,7 +180,7 @@ html, body, div, span, object, iframe,
 
             }
 
-            form > input, select, button {
+            #profile_signup form > input, select, button {
                 flex: 1 0 60%;
                 height: 25px;
                 outline: none;
