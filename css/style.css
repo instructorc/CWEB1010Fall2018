@@ -69,6 +69,11 @@ html, body, div, span, object, iframe,
                 height: 60px;
                
             }
+            #footstruct{
+                height: 400px;
+                width: 100%;
+                background-color: #eee;
+            }
             #banner{
                 width: 100%;
                 background-image: url(../img/banner.jpg);
@@ -80,6 +85,13 @@ html, body, div, span, object, iframe,
                 width: 95%;
                 margin:auto;
                 margin-top: 10px;
+            }
+
+            /**Testimonial Section**/
+            section.test_qoute{
+                width: 60%;
+                margin: auto;
+                margin-top: 10%;
             }
             /**The container for the banner flex items**/
             #banner_contain{
@@ -270,9 +282,9 @@ html, body, div, span, object, iframe,
 
             
             #apartment_search_block{
-                
+                background-color: #eee;
                 width: 100%;
-               
+                padding: 5% 0%;
                 margin-top: 6em;
                 text-align: center;
                 
@@ -345,7 +357,7 @@ html, body, div, span, object, iframe,
             .carousel-cell {
                 width: 100%; /* full width */
                 height: 760px; /* height of carousel */
-                background-color: #eee;
+             
               }
             /**Implementing CSS Grid**/
             #grid_container{
